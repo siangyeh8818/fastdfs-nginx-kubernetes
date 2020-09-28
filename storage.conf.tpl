@@ -38,12 +38,12 @@ heart_beat_interval=30
 stat_report_interval=60
 
 # the base path to store data and log files
-base_path=/home/yuqing/fastdfs
+base_path=/data/usr-data/storage-data
 
 # max concurrent connections the server supported
 # default value is 256
 # more max_connections means more memory will be used
-max_connections=256
+max_connections=25000
 
 # the buff size to recv / send data
 # this parameter must more than 8KB
