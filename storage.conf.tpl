@@ -106,7 +106,8 @@ store_path_count=1
 
 # store_path#, based 0, if store_path0 not exists, it's value is base_path
 # the paths must be exist
-store_path0=/home/yuqing/fastdfs
+store_path0=/data/usr-data/file
+#store_path0=/home/yuqing/fastdfs
 #store_path1=/home/yuqing/fastdfs2
 
 # subdir_count  * subdir_count directories will be auto created under each 
@@ -115,7 +116,7 @@ subdir_count_per_path=256
 
 # tracker_server can ocur more than once, and tracker_server format is
 #  "host:port", host can be hostname or ip address
-tracker_server=$TRACKER_IP:$TRACKER_PORT
+tracker_server=$MY_POD_IP:$TRACKER_PORT
 
 #standard log level as syslog, case insensitive, value list:
 ### emerg for emergency
@@ -278,5 +279,5 @@ connection_pool_max_idle_time = 3600
 http.domain_name=
 
 # the port of the web server on this storage server
-http.server_port=8888
+http.server_port=8088
 

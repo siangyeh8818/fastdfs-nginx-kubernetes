@@ -1,7 +1,7 @@
 #FROM siangyeh8818/club-fastdfs:base
 FROM centos:7
 
-RUN yum -y install gcc gcc-c++ libstdc++-devel pcre pcre-devel zlib zlib-devel openssl openssl-devel wget make
+RUN yum -y install gcc gcc-c++ libstdc++-devel pcre pcre-devel zlib zlib-devel openssl openssl-devel wget make initscripts
 RUN yum -y groupinstall 'Development Tools'
 RUN wget https://github.com/happyfish100/libfastcommon/archive/V1.0.7.tar.gz 
 RUN tar -zxvf  V1.0.7.tar.gz
@@ -23,7 +23,9 @@ RUN  cp anti-steal.jpg http.conf mime.types /etc/fdfs/
 COPY nginx.conf  /usr/local/nginx/conf/
 COPY tracker.conf.tpl /etc/fdfs
 COPY storage.conf.tpl /etc/fdfs 
+COPY client.conf.tpl /etc/fdfs
+COPY mod_fastdfs.conf.tpl /etc/fdfs
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 WORKDIR /
-ENTRYPOINT ["/bin/bash" "-c" "/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]

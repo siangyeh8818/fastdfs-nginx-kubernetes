@@ -81,7 +81,7 @@ reserved_storage_space = 10%
 ### notice
 ### info
 ### debug
-log_level=info
+log_level=$LOG_LEVEL
 
 #unix group name to run this program, 
 #not set (empty) means run by the group of current user
@@ -245,7 +245,7 @@ use_connection_pool = false
 connection_pool_max_idle_time = 3600
 
 # HTTP port on this tracker server
-http.server_port=8080
+http.server_port=8088
 
 # check storage HTTP server alive interval seconds
 # <= 0 for never check

@@ -7,11 +7,11 @@ connect_timeout=30
 network_timeout=60
 
 # the base path to store log files
-base_path=/home/yuqing/fastdfs
+base_path=/data/usr-data/client
 
 # tracker_server can ocur more than once, and tracker_server format is
 #  "host:port", host can be hostname or ip address
-tracker_server=$TRACKER_IP:$TRACKER_PORT
+tracker_server=$MY_POD_IP:$TRACKER_PORT
 
 #standard log level as syslog, case insensitive, value list:
 ### emerg for emergency
@@ -55,7 +55,7 @@ storage_ids_filename = storage_ids.conf
 
 
 #HTTP settings
-http.tracker_server_port=80
+http.tracker_server_port=8088
 
 #use "#include" directive to include HTTP other settiongs
 ##include http.conf

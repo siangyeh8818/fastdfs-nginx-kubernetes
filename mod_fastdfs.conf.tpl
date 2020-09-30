@@ -37,7 +37,7 @@ storage_ids_filename = storage_ids.conf
 # FastDFS tracker_server can ocur more than once, and tracker_server format is
 #  "host:port", host can be hostname or ip address
 # valid only when load_fdfs_parameters_from_tracker is true
-tracker_server=tracker:22122
+tracker_server=$MY_POD_IP:$TRACKER_PORT
 
 # the port of the local storage server
 # the default value is 23000
@@ -50,7 +50,7 @@ group_name=group1
 # set to false when uri like /M00/00/00/xxx
 # set to true when uri like ${group_name}/M00/00/00/xxx, such as group1/M00/xxx
 # default value is false
-url_have_group_name = false
+url_have_group_name = true
 
 # path(disk or mount point) count, default value is 1
 # must same as storage.conf
@@ -59,7 +59,8 @@ store_path_count=1
 # store_path#, based 0, if store_path0 not exists, it's value is base_path
 # the paths must be exist
 # must same as storage.conf
-store_path0=/home/yuqing/fastdfs
+#store_path0=/home/yuqing/fastdfs
+store_path0=/data/usr-data/file
 #store_path1=/home/yuqing/fastdfs1
 
 # standard log level as syslog, case insensitive, value list:
